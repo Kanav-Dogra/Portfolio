@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 22px;
+       background-color:  rgb(231, 222, 222);
+    font-family: 'YourPreferredFont', Arial, sans-serif;
+}
+
+    .b-img {
+        width: 100vw;
+        height: 40vh;
+    }
+
+    .b-img img {
+        width: 100vw;
+        height: 100%;
+        border: 3px solid blueviolet;
+    }
+
+    .f-img {
+        width: 40vw;
+        height: 30vh;
+        transform: translateY(-53%);
+    }
+
+    .f-img img {
+        width: 22em;
+        height: 14em;
+        border: 4px solid blueviolet;
+        border-radius: 200%;
+    }
+
+    .front {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+
+    .purp {
+        color: blueviolet;
+        margin-bottom: 10px;
+    }
+
+    .info {
+        margin-left: 10%;
+    }
+
+    .my-nav {
+        width: 100vw;
+        background-color: blueviolet;
+        color: aliceblue;
+        font-size: 22px;
+        height: 3.1em;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .my-nav ul {
+        width: 100vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+    }
+
+    .my-nav ul li {
+        list-style: none;
+        padding: 0px 10px;
+        color: aliceblue;
+        
+    }
+
+    .my-nav ul li:hover {
+        background-color: aliceblue;
+        border-radius: 15px;
+    }  
+   
+    
+    .my-nav ul li.active a {
+    background-color: white;
+    color: blueviolet;
+    border-radius: 15px;
+}
+
+
+    a {
+        text-decoration: none;
+        color: aliceblue;
+    }
+
+    a:hover {
+        color: blueviolet;
+    }
+
+    .contact-info {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info div {
+        margin-bottom: 10px;
+    }
+    p{
+        color:blueviolet;
+    }
+    .contact-info {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blueviolet;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index:100;
+    font-size: 16px;
+    color: white;
+}
+
+.contact-info div {
+    margin-bottom: 15px;
+}
+
+.contact-info img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s ease;
+}
+
+.contact-info img:hover {
+    transform: scale(2);
+    cursor: pointer;
+}
+
+.contact-info:hover {
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+    /*  */
+    #email{
+        margin-top: -33px;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content:space-around;
+        
+    }
+    button{
+        width: 10em;
+        height: 2.1em;
+        border-radius: 200px;
+        padding: 3px 3px;
+        
+    }
+    button:hover{
+        background-color: blueviolet;
+        color: white;
+        cursor: pointer;
+        box-shadow: 1.5px 1.5px black;
+    }
+
+
+    .skills {
+    padding: 2px 2px;
+    margin-top: 20px;
+    width: 100vw;
+    height: auto;
+    border-radius: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+
+.skill-info {
+    flex: 1 1 15%;
+    margin: 12px 12px 12px 12px;
+    box-sizing: border-box;
+    border: 2px solid wheat;
+    border-radius: 40px;
+    padding: 10px;
+    background-color: white; 
+    height: 40%; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    transition: all 0.1s ease-in 0.1s;
+    
+}
+
+.skill-info img {
+    width: 100%;  
+}
+    .skill-info:hover{
+        transform: scale(1.12);
+        box-shadow: 3px 3px 3px 3px black;
+        cursor: pointer;
+    }
+    #my-skills{
+        text-align: center;
+        margin-bottom: -20px;
+    }
+    #skill-section{
+        border-radius: 20px;
+        background-color:white;
+        width: 100vw;
+        height:50vh;
+    }
+    .certificates {
+        display: flex;
+        flex-wrap: wrap; 
+        
+    }
+    .certificate-info {
+        text-align: center;
+        flex: 1 1 25%; 
+        box-sizing: border-box; 
+        padding: 10px; 
+        border:2px solid white;
+        margin:7px 7px;
+        color:#000080;
+        font-weight: bold;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 2px 2px rgb(107, 95, 95);
+        
+    }
+    .certificate-info:hover{
+        box-shadow: 5px 5px 5px 5px rgb(107, 95, 95);
+    }
+    #my-certificates{
+        text-align: center;
+        margin-bottom: -20px;
+    }
+    #certification-section{
+        border-radius: 20px;
+        background-color:honeydew;
+        width: 100vw;
+        height:180vh;
+        
+    }
+    .certificate-info img:hover {
+        transform: scaleX(2);
+        cursor: pointer;
+    }
+    
+
+    #education {
+            margin-top: 20px;
+            width:98vw;
+            height:115vh;
+            padding: 20px;
+            background: linear-gradient(135deg, #2980b9, #8e44ad);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            color: #fff;
+    }
+
+        #education:before {
+            content: '';
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 1;
+            transform: scale(1);
+            animation: animateBubble 20s linear infinite;
+        }
+
+        #education:after {
+            content: '';
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 1;
+            transform: scale(1);
+            animation: animateBubble 25s linear infinite;
+        }
+
+        @keyframes animateBubble {
+            0% {
+                transform: scale(0.9);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(0.9);
+            }
+        }
+
+        #education h2 {
+            font-size: 32px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .timeline {
+            padding: 20px 0;
+            list-style: none;
+            margin: 0;
+            z-index: 2;
+            position: relative;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #ffffff;
+            left: 50%;
+            margin-left: 1px;
+            z-index: 3;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+            position: relative;
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item-content {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 42px 42px 42px 42px;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: black;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-item-content {
+            transform: translateX(10px);
+        }
+
+        .timeline-item:nth-child(even) .timeline-item-content {
+            transform: translateX(-4px);
+        }
+
+        .timeline-item:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 10px;
+            height: 10px;
+            background: #ffffff;
+            border-radius: 50%;
+            border: 2px solid #2980b9;
+            left: 50%;
+            margin-left: -5px;
+            z-index: 3;
+        }
+
+        .timeline-item:nth-child(odd):after {
+            left: auto;
+            right: -6px;
+        }
+
+        .timeline-item:nth-child(even):after {
+            right: auto;
+            left: 6px;
+        }
+
+        .timeline-item .h3 {
+            font-size: 20px;
+            color: #2980b9;
+            margin: 0 0 10px 0;
+        }
+
+        .timeline-item p {
+            color: black;
+            margin: 0;
+        }
+
+        .timeline-item ul {
+            margin: 10px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .timeline-item ul li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: black;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .timeline-item ul li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+
+        #experience-roles{
+            background-color: #b7dfa9;
+            border-radius: 20px;
+            color: #ffffff;
+            position: relative;
+            height: 45vh;
+        }
+
+        .exp-info-content{
+            padding: 5px 5px;
+            height: 14vh;
+            width:40vw;
+            background-color: white;
+            border-radius: 20px 20px 20px 20px;
+            margin-left: 10px;
+        }
+
+        .exp-info-content-2{
+            padding: 5px 5px;
+            height: 15vh;
+            width:40vw;
+            position:absolute;
+            left :50%;
+            background-color: white;
+            border-radius: 20px 20px 20px 20px;
+        }
+
+        #link-content{
+            top: 19%;
+             left: 44%;
+             position: absolute;
+             width: 3px;
+             background-color: #ffffff;
+              height: 80%;
+              transform: rotate(310deg);
+        }
+        
+
+      
+    .sliders-container {
+        width: 100vw;
+        margin: 0 auto;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        border-radius: 20px;
+    }
+
+    .slider {
+        width: 48vw;
+        height: 60vh;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+    }
+
+    .slide {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-size: contain; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #f0f0f0;
+        transition: opacity 0.5s ease;
+        opacity: 0;
+    }
+
+    .slide.active {
+        opacity: 1;
+    }
+
+    .arrow {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-style: solid;
+        z-index: 1000;
+    }
+
+    .arrow-left {
+        border-width: 20px 30px 20px 0;
+        border-color: transparent black transparent transparent;
+        left: 10px;
+        z-index: 2;
+    }
+
+    .arrow-right {
+        border-width: 20px 0 20px 30px;
+        border-color: transparent transparent transparent black;
+        right: 10px;
+        z-index: 2;
+    }
+
+    .slider-text {
+        text-align: center;
+        padding: 10px;
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+    }
+    .first-project{
+      border-radius: 20px;
+      background-color: white;
+    }
+
+    #project{
+        background:linear-gradient(135deg, #2980b9, #8e44ad);
+        width: 100vw;
+        height: 250vh;
+        color: white;
+    }
+    .slider-text{
+        border-radius: 20px;
+    }
+    #project .sliders-container{
+        color:blue;
+    }
+    
+    .h3{
+        font-size: 10%;
+    }
+
+@media only screen and (max-width: 480px) {
+  
+  .b-img {
+    width: 100vw;
+    height: auto;
+  }
+
+  .f-img {
+    width: 10vw;
+    height: auto;
+    transform: translateY(-40%);
+  }
+
+  .f-img img {
+    width: 14em;
+    height: 7em;
+  }
+
+  .front {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .my-nav {
+    display: none;
+    visibility: hidden;
+  }
+  .contact-info {
+        right: 35px; 
+        top: 10%;
+        transform: translateY(0); 
+        padding: 8px; 
+        max-width: 70vw; 
+        max-height: 70vh; 
+        font-size: 12px; 
+    }
+
+  #email {
+    transform: translateY(-10%);
+    flex-direction: column;
+    justify-content: center;
+  }
+  .skills {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill-info {
+    margin: 10px;
+    flex: 1 1 25%;
+  }
+  #skill-section{
+    height: auto;
+  }
+
+ 
+  #certification-section {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .certificate-info {
+    width: 100%;
+    margin: 10px 0;
+  }
+  #education {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .timeline-item-content {
+    padding: 10px;
+  }
+  .timeline-item:after{
+    position: static;
+  }
+  .timeline-item:before{
+    position: static;
+  }
+  .timeline:before{
+    position: static;
+  }
+  .timeline-item:nth-child(even){
+    position: static;
+    transform: translateX(10px);
+  }
+  #experience-roles {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    position: static;
+  }
+
+  .exp-info-content {
+    width:100%;
+    height: 60%;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  .exp-info-content-2{
+        position: static;
+        height: 60%;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    }
+
+  #link-content {
+    visibility: hidden;
+    display: none;
+  }
+
+  #project {
+    padding: 20px;
+    height: auto;
+  }
+
+  .sliders-container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .first-project {
+    margin: 10px;
+  }
+
+  .slider {
+    width: 100%;
+  }
+
+  .slider-text {
+    padding: 10px;
+  }
+
+  section {
+    width: 100%;
+    height: auto;
+  }
+
+  
+}
+
+@media only screen and (min-width: 485px) and (max-width: 1024px) {
+    .b-img {
+    width: 100vw;
+    height: 25vh;
+  }
+
+  .f-img {
+    width: 10vw;
+    height: auto;
+    transform: translateY(-33%);
+  }
+
+  .f-img img {
+    width: 20em;
+    height: 11em;
+  }
+
+  .front {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+  .info {
+    margin-left: 20%;
+    transform: translateY(51px);
+  }
+  .contact-info {
+        right: 10px; 
+        top: 20%;
+        transform: translateY(0); 
+        padding: 10px; 
+        max-width: 80vw; 
+        max-height: 80vh; 
+        font-size: 14px; 
+    }
+
+
+  #email {
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(-20%);
+  }
+
+  .skills {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill-info {
+    margin: 10px;
+    flex: 1 1 25%;
+  }
+  #certification-section {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .certificate-info {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #education {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .timeline-item-content {
+    padding: 10px;
+  }
+  .timeline-item:after{
+    position: static;
+  }
+  .timeline-item:before{
+    position: static;
+  }
+  .timeline:before{
+    position: static;
+  }
+  .timeline-item:nth-child(even){
+    position: static;
+    transform: translateX(10px);
+  }
+
+  #experience-roles {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    position: static;
+  }
+
+  .exp-info-content {
+    width:100%;
+    height: 60%;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  .exp-info-content-2{
+        position: static;
+        height: 60%;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    }
+
+  #link-content {
+    visibility: hidden;
+    display: none;
+  }
+
+  /* Projects */
+  #project {
+    padding: 20px;
+    height: auto;
+  }
+
+  .sliders-container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .first-project {
+    margin: 10px;
+  }
+
+  .slider {
+    width: 100%;
+  }
+
+  .slider-text {
+    padding: 10px;
+  }
+
+ 
+  section {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1366px){
+    #education{
+        height:68vh;
+    }
+    #link-content{
+        height: 69%;
+    }
+    #certification-section{
+        height: 93vh;
+    }
+
+    #project{
+        height: 225vh;
+    }
+    section {
+    width: 100%;
+    height: auto;
+  }
+  #project {
+    padding: 20px;
+    height: auto;
+  }
+
+  .sliders-container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .first-project {
+    margin: 10px;
+  }
+
+  .slider {
+    width: 100%;
+  }
+
+  .slider-text {
+    padding: 10px;
+  }
+  .b-img {
+    width: 100vw;
+    height: 25vh;
+  }
+
+  .f-img {
+    width: 10vw;
+    height: auto;
+    transform: translateY(-33%);
+  }
+
+  .f-img img {
+    width: 20em;
+    height: 11em;
+  }
+
+  .front {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+  .info {
+    margin-left: 20%;
+    
+  }
+  .contact-info {
+        right: 7%; 
+        top: 20%;
+        transform: translateY(0); 
+        padding: 10px; 
+        max-width: 80vw; 
+        max-height: 80vh; 
+        font-size: 14px; 
+    }
+
+
+  #email {
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(-20%);
+  }
+
+  .skills {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .skill-info {
+    margin: 10px;
+    flex: 1 1 25%;
+  }
+
+  
+  #certification-section {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .certificate-info {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #education {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .timeline-item {
+    width: 50%;
+    padding: 10px;
+  }
+}
+
+
+</style>
+<body>
+    <header>
+        <div class="b-img">
+            <img src="./images/BG-2.jpg" alt="Background image">
+        </div>
+        <div class="front">
+            <div class="front-1">
+            <div class="f-img">
+                <img src="./images/myimage.jpg" alt="my image">
+            </div><div id="email">
+            <br><a href="#resumepath" download="filename" ><Button>Download Resume</Button></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kanavdogra97@gmail.com&su=Subject&body=Body" class="email-link" title="Send Email"  target="_blank"><p><i>kanavdogra97@gmail.com</i></p></a>
+            </div>
+        </div>
+            <div class="info">
+                <div>Hello, <strong><i class="purp">Kanav Dogra</i></strong></div>
+                <span><i>I'm a Passionate</i></span>
+                <span id="element" class="purp">Problem Solver</span>
+                <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
+            </div>
+            <div class="contact-info">
+                <div>Connect</div>
+                <div><a href="https://www.instagram.com/kanav073/"><img src="./images/kanav073_qr.png" alt="Instagram" height="50px" target="_blank"></a></div>
+                <div><a href="https://www.facebook.com/kanav.dogra.165"><img src="./images/facebook-icon-free-png.webp" alt="Facebook" height="50px" target="_blank"></a></div>
+                <div><a href="https://www.linkedin.com/in/kanav-dogra-527293276/"><img src="./images/Logo Linkedin.png" alt="Linked in" height="50px" target="_blank"></a></div>
+                <div><a href="https://wa.me/qr/RCCPTVHRCCMAL1"><img src="./images/WhatsappContact.jpg" alt="Whatsapp" height="50px" target="_blank"></a></div>
+                <div><a href="https://t.me/+917889933488"><img src="./images/telegramContact.jpg" alt="Telegram" height="50px" target="_blank"></a></div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <nav class="my-nav">
+            <ul>
+                <li><a href="#skill-section">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certification-section">Certifications</a></li>
+                <li><a href="#project">Projects</a></li>
+                
+            </ul>
+        </nav>
+    </section>
+
+    <section id="skill-section">
+        <div id="my-skills">
+        <h2><i>SKILLS</i></h2>
+    </div>
+        <div class="skills">
+            <div class="skill-info"> <img src="./images/html-logo-png-3.png" alt="HTMl" height="100px">  </div>
+            <div class="skill-info"><img src="./images/css-logo.png" alt="CSS" height="100px"></div>
+            <div class="skill-info"><img src="./images/nodejs-icon-logo-png-transparent.png" alt="Node JS" height="100px"></div>
+            <div class="skill-info"><img src="./images/tailwindcss-logo.png" alt="Tailwind CSS" height="100px"></div>
+            <div class="skill-info"><img src="./images/mysql-logo-png-transparent.png" alt="MySQL" height="100px"></div>
+            <div class="skill-info"><img src="./images/mongodb-original-wordmark-icon-505x512-q86sq243.png" alt="MogoDB" height="100px"></div>
+            <div class="skill-info"><img src="./images/C-language.png" alt="C" height="100px"></div>
+            <div class="skill-info"><img src="./images/C++.png" alt="C++" height="100px"></div>
+            <div class="skill-info"><img src="./images/Java_(programming_language)-Logo.wine.png" alt="Java" height="100px"></div>
+            <div class="skill-info"><img src="./images/PHP-Logo-PNG.png" alt="PHP" height="100px"></div>
+            <div class="skill-info"><img src="./images/python.png" alt="Python" height="100px"></div>
+            <div class="skill-info"><img src="./images/Javascript.png" alt="JS" height="100px"></div>
+        </div>
+    </section>
+
+   
+    <section id="education">
+        <h2><i>Education</i></h2>
+        
+        <ul class="timeline">
+            <li class="timeline-item">
+                <div class="timeline-item-content">
+                    <span><img src="./images/jkbose.png" alt="college logo" id="jkbose_logo" height="40px"><span class="h3">CLASS 10th (SSC)</span>
+                    <p class="edu-info"><strong>National Academy High School</strong>, Samba, J&K</p>
+                    <ul>
+                        <li class="edu-info">Marks - 473/500 || 95% || 10.00 CGPA</li>
+                    </ul>
+                </div>
+            </li>
+    
+            <li class="timeline-item">
+                <div class="timeline-item-content">
+                    <span><img src="./images/jkbose.png" alt="college logo" id="jkbose_logo" height="40px"><span class="h3">CLASS 12th</span>
+                    <p class="edu-info"><strong>Govt. Hr. Sec. School </strong>, Vijaypur, J&K</p>
+                    <p class="edu-info">July 2020 - July 2022</p>
+                    <ul>
+                        <li class="edu-info">Marks - 488/500 || 97.6% </li>
+                    </ul>
+                </div>
+            </li>
+    
+            <li class="timeline-item">
+                <div class="timeline-item-content">
+                    <span><img src="./images/bvdu_logo.png" alt="college logo" id="bvdu_logo" height="40px"></span> <span class="h3">BACHELOR OF TECHNOLOGY ( COMPUTER ENGINEERING)</span>
+                   <span class="edu-info"><strong>BV(DU)COE</strong>, Pune, Maharashtra</span>
+                    <p class="edu-info">July 2022 - July 2026 (Currently Pursuing)</p>
+                    <ul>
+                        <li class="edu-info">First year - 09.92 CGPA (Ist Sem - 10.00 && 2nd Sem - 09.84)</li>
+                        <li class="edu-info">Second year - 10.00 CGPA (3rd Sem - 10.00 && 4th Sem - 10.00)</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </section>
+    
+    <section id="experience-roles">
+        <div id="exp-heading" style="text-align: center; color: #ffffff;"><h2><i>Leadership roles</i></h2></div>
+        <div class="exp">
+            <!-- <p style="color: #ffffff;">I have no experience of working in industry however I have developed some projects that are shown below</p> -->
+                <div class="exp-info-content">
+                    <p class="exp-info"><strong>EPST Head </strong>@ ACES , BVUCOEP</p>
+                    <p class="exp-info">Session 2024 - 2025</p>
+                </div>
+                <div id="link-content"></div>
+                <div class="exp-info-content-2">
+                    <p class="exp-info"><strong>EPST Associate </strong>@ ACES , BVUCOEP</p>
+                    <p class="exp-info">Session 2023 - 2024</p>
+                </div>
+                
+        </div>
+
+    </section>
+
+    <section id="certification-section">
+
+        <div id="my-certificates">
+            <h2><i>Certifications</i></h2>
+        </div>
+        <div class="certificates">
+            <div class="certificate-info"><img src="./Certificates/CyberSecurity.png" alt="CyberSecurity" height="240px" width="240px"><div>
+<ul>
+    <li>Issuing Authority : University of Maryland</li>
+    <li>Skill Gained : CyberSecurity</li>
+</ul>
+            </div></div>
+            <div class="certificate-info"><img src="./Certificates/DBMS-NPTEL.png" alt="DBMS-NPTEL" height="240px" width="240px">
+            <div><ul>
+                <li>Issuing Authority : IIT Kharagpur(NPTEL)</li>
+                <li>Skill Gained : DataBase Management System</li>
+            </ul></div></div>
+            <div class="certificate-info"><img src="./Certificates/SE-NPTEL.png" alt="SE-NPTEL" height="240px" width="240px"><div>
+                <ul>
+                    <li>Issuing Authority : IIT Kharagpur(NPTEL)</li>
+                    <li>Skill Gained : Software Engineering</li>
+                </ul>
+            </div></div>
+            <div class="certificate-info"><img src="./Certificates/BackendPW.png" alt="BackendPW" height="240px" width="240px"><div>
+                <ul>
+                    <li>Issuing Authority : Physics Wallah</li>
+                    <li>Skill Gained : Backend Development(Node.js) , MongoDB</li>
+                </ul>
+            </div></div>
+            <div class="certificate-info"><img src="./Certificates/Intro to FrontEnd.png" alt="FrontEnd" height="240px" width="240px"><div>
+                <ul>
+                    <li>Issuing Authority :Meta</li>
+                    <li>Skill Gained : Frontend Development (HTML,CSS,JS,React JS)</li>
+                </ul>
+            </div></div>
+            <div class="certificate-info"><img src="./Certificates/IOT.png" alt="IOT" height="240px" width="240px"><div>
+                <ul>
+                    <li>Issuing Authority :</li>
+                    <li>Skill Gained : IOT </li>
+                </ul>
+            </div></div>
+            <div class="certificate-info"><img src="./Certificates/MachineLearning.png" alt="MachineLearning" height="240px" width="240px"><div>
+                <ul>
+                    <li>Issuing Authority : Duke University (Coursera)</li>
+                    <li>Skill Gained : Basics of Machine Learning</li>
+                </ul>
+            </div></div>
+            <div class="certificate-info"><img src="./Certificates/PHP.png" alt="PHP" height="240px" width="240px"><div>
+                <ul>
+                    <li>Issuing Authority : University of Michigan (Coursera))</li>
+                    <li>Skill Gained : PHP</li>
+                </ul>
+            </div></div>
+            <div class="certificate-info"><img src="./Certificates/SystemDesignWP.png" alt="System Design" height="240px" width="240px"><div>
+                <ul>
+                    <li>Issuing Authority : PW</li>
+                    <li>Skill Gained : Basics of System Design</li>
+                </ul>
+            </div></div>
+        </div>
+    </section>
+
+    <section id="project">
+        <div style="text-align: center;"><h2><i>PROJECTS</i></h2></div>
+        <div class="sliders-container">
+            <div class="first-project">
+                <div class="slider" id="slider1">
+                    <div class="arrow arrow-left" id="arrow-left-1"></div>
+                    <div class="slide slide1 active" style="background-image: url('./images/FCFS_SC.png');"></div>
+                    <div class="slide slide2" style="background-image: url('./images/SJF_SC.png');"></div>
+                    <div class="slide slide3" style="background-image: url('./images/non-pre-priority_SC.png');"></div>
+                    <div class="slide slide4" style="background-image: url('./images/RR_SC.png');"></div>
+                    <div class="arrow arrow-right" id="arrow-right-1"></div>
+                </div>
+                <div class="slider-text">
+                    <ul>
+                        <li>Title : CPU Scheduling Algorithms Simulator </li>
+                        <li>Aim   :To make easy to understand the CPU scheduling algorithms</li>
+                        <li><i><a href="#" style="color:blue" target="_blank"><del>PROJECT LINK</del></a></i></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- SLIDER2 -->
+            <div class="first-project">
+                <div class="slider" id="slider2">
+                    <div class="arrow arrow-left" id="arrow-left-2"></div>
+                    <div class="slide slide5 active" style="background-image: url('./images/DBMS1.png');"></div>
+                    <div class="slide slide6" style="background-image: url('./images/DBMS2.png');"></div>
+                    <div class="slide slide7" style="background-image: url('./images/DBMS3.png');"></div>
+                    <div class="slide slide8" style="background-image: url('./images/DBMS4.png');"></div>
+                    <div class="slide slide9" style="background-image: url('./images/DBMS5.png');"></div>
+                    <div class="slide slide10" style="background-image: url('./images/DBMS6.png');"></div>
+                    <div class="slide slide11" style="background-image: url('./images/DBMS7.png');"></div>
+                    <div class="arrow arrow-right" id="arrow-right-2"></div>
+                </div>
+                <div class="slider-text"><ul>
+                        <li>Title : Railway Ticket Booking System(Clone Project)</li>
+                        <li>Aim   : To help the users to book the tickets online and do enquiry</li>
+                        <li><i><a href="#"style="color:blue" target="_blank"><del>PROJECT LINK</del></a></i></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Third Slider -->
+            <div class="first-project">
+                <div class="slider" id="slider3">
+                    <div class="arrow arrow-left" id="arrow-left-3"></div>
+                    <div class="slide slide12 active" style="background-image: url('./images/BMICALC.png');"></div>
+                    <div class="slide slide13" style="background-image: url('./images/BMICALC@.png');"></div>
+                    <div class="arrow arrow-right" id="arrow-right-3"></div>
+                </div>
+                <div class="slider-text"><ul>
+                    <li>Title :BMI Calculator</li>
+                    <li>Aim   :To enable the user to calculate the Body Mass Index</li>
+                    <li><i><a href="./Projects/BMICalculator.html"style="color:blue" target="_blank">PROJECT LINK</a></i></li>
+                </ul></div>
+            </div>
+            <!-- FOURTH SLIDER -->
+            <div class="first-project">
+                <div class="slider" id="slider4">
+                    <div class="arrow arrow-left" id="arrow-left-4"></div>
+                    <div class="slide slide14 active" style="background-image: url('./images/FoodWeb1.png');"></div>
+                    <div class="slide slide15" style="background-image: url('./images/FoodWeb2.png');"></div>
+                    <div class="arrow arrow-right" id="arrow-right-4"></div>
+                </div>
+                <div class="slider-text"><ul>
+                        <li>Title : Online Food Ordering Website (Dummy UI Design)</li>
+                        <li>Aim   : To allow the users to order the food online</li>
+                        <li><i><a href="./Projects/OnlineFood.html"style="color:blue" target="_blank">PROJECT LINK</a></i></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Fifth Slider -->
+            <div class="first-project">
+                <div class="slider" id="slider5">
+                    <div class="arrow arrow-left" id="arrow-left-5"></div>
+                    <div class="slide slide16 active" style="background-image: url('./images/Clk1.png');"></div>
+                    <div class="slide slide17" style="background-image: url('./images/clk2.png');"></div>
+                    <div class="arrow arrow-right" id="arrow-right-5"></div>
+                </div>
+                <div class="slider-text"><ul>
+                        <li>Title : Analog Clock</li>
+                        <li><i><a href="./Projects/AnalogClk.html"style="color:blue" target="_blank">PROJECT LINK</a></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+      var typed = new Typed('#element', {
+        strings: ['CE Student', 'Frontend Developer', 'Problem Solver'],
+        typeSpeed: 70,
+        backSpeed: 50,
+        loop: true,
+        loopCount: Infinity,
+    });  
+</script>
+
+<script>
+    function initializeSlider(sliderId, arrowLeftId, arrowRightId) {
+        let sliderImages = document.querySelectorAll(`#${sliderId} .slide`);
+        let arrowLeft = document.querySelector(`#${arrowLeftId}`);
+        let arrowRight = document.querySelector(`#${arrowRightId}`);
+        let current = 0;
+
+        function reset() {
+            sliderImages.forEach((img) => img.classList.remove('active'));
+        }
+
+        function startSlide() {
+            reset();
+            sliderImages[0].classList.add('active');
+        }
+
+        function slideLeft() {
+            reset();
+            sliderImages[current - 1].classList.add('active');
+            current--;
+        }
+
+        function slideRight() {
+            reset();
+            sliderImages[current + 1].classList.add('active');
+            current++;
+        }
+
+        arrowLeft.addEventListener("click", function () {
+            if (current === 0) {
+                current = sliderImages.length;
+            }
+            slideLeft();
+        });
+
+        arrowRight.addEventListener("click", function () {
+            if (current === sliderImages.length - 1) {
+                current = -1;
+            }
+            slideRight();
+        });
+
+        startSlide();
+    }
+
+    initializeSlider("slider1", "arrow-left-1", "arrow-right-1");
+    initializeSlider("slider2", "arrow-left-2", "arrow-right-2");
+    initializeSlider("slider3", "arrow-left-3", "arrow-right-3");
+    initializeSlider("slider4", "arrow-left-4", "arrow-right-4");
+    initializeSlider("slider5", "arrow-left-5", "arrow-right-5");
+</script>
+</html> 
+
